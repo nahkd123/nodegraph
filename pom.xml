@@ -1,0 +1,21 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>io.github.nahkd123</groupId>
+	<artifactId>nodegraph</artifactId>
+	<version>${nodegraph.version}</version>
+	<name>NodeGraph</name>
+	<description>Blender-like node system</description>
+	<properties>
+		<maven.compiler.source>17</maven.compiler.source>
+		<maven.compiler.target>17</maven.compiler.target>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<nodegraph.version>0.0.1-SNAPSHOT</nodegraph.version>
+	</properties>
+	<packaging>pom</packaging>
+	<modules>
+		<module>nodegraph-base</module>
+		<module>nodegraph-serialize</module>
+	</modules>
+</project>
