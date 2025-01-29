@@ -1,4 +1,6 @@
 # NodeGraph
+![Tag Badge](https://img.shields.io/github/v/tag/nahkd123/nodegraph)
+
 Node graph system library for Java (like Blender shader nodes).
 
 ## Modules
@@ -7,6 +9,27 @@ Node graph system library for Java (like Blender shader nodes).
 
 > [!NOTE]
 > NodeGraph does not provides any node implementation out of the box at this moment; you will have to implement them yourself. I'm unsure which kind of node that will be used the most.
+
+## Using NodeGraph
+[![](https://jitpack.io/v/nahkd123/nodegraph.svg)](https://jitpack.io/#nahkd123/nodegraph)
+
+### Maven
+```xml
+<repositories>
+	<repository>
+	    <id>jitpack.io</id>
+	    <url>https://jitpack.io</url>
+	</repository>
+</repositories>
+<dependencies>
+    <dependency>
+        <groupId>com.github.nahkd123.nodegraph</groupId>
+        <artifactId>nodegraph-base</artifactId>
+        <version>[TAG]</version>
+    </dependency>
+    <!-- TODO: also include nodegraph-serialize -->
+</dependencies>
+```
 
 ## Example
 ### Implementing add node (add 2 values)

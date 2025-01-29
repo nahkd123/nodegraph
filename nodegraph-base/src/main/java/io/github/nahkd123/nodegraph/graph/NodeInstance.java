@@ -52,9 +52,7 @@ public class NodeInstance<S, E> {
 
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public <V> V getInitialValue(InputSocket<V> socket) {
-		return (V) ((Map) sockets).computeIfAbsent(socket, s -> (socket instanceof InputSocket input
-			? input.defaultValue()
-			: null));
+		return (V) ((Map) sockets).computeIfAbsent(socket, s -> socket.defaultValue());
 	}
 
 	@SuppressWarnings({ "unchecked", "rawtypes" })
