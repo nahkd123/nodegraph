@@ -117,5 +117,11 @@ eval.eval(b).get(AddNode.NODE.output); // (1 + 2) + 4 = 7
 // evaluation update the internal states.
 ```
 
+## Understanding NodeGraph
+### What is "environment"?
+Environment is an object that all nodes can have access to. Environment is usually used for obtaining the data from eg: world, workspace, mesh, etc to so-called "input nodes". It can also be used by "output nodes" to modify the environment like workspace or world.
+
+While you can use static and globally accessible fields, the idea of having environment is to allow node graph to evaluate in parallel (as known as splitting into multiple threads). For example, let's say your application is handling multiple workspaces, each have its own thread. If you use static fields, you have to pause the processing on workspaces unrelated to target, otherwise undefined behavior (such as race conditions) will present. Passing the interface to access workspace to node graph evaluator will allow multiple workspaces to process at the same time in different thread.
+
 ## License
 MIT License.
