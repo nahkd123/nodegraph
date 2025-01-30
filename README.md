@@ -6,6 +6,7 @@ Node graph system library for Java (like Blender shader nodes).
 ## Modules
 - `nodegraph-base`: NodeGraph itself. Contains an interface for implementing your own node, `NodeGraph` for connecting nodes and evaluating the graph.
 - `nodegraph-serialize`: Graph serialization module that (de)serialize from `DataInput` or to `DataOutput`.
+- `nodegraph-dfucodec`: Graph serialization module that uses DataFixerUpper codec. Intended for use in Minecraft mods.
 
 > [!NOTE]
 > NodeGraph does not provides any node implementation out of the box at this moment; you will have to implement them yourself. I'm unsure which kind of node that will be used the most.
@@ -27,7 +28,8 @@ Node graph system library for Java (like Blender shader nodes).
         <artifactId>nodegraph-base</artifactId>
         <version>[TAG]</version>
     </dependency>
-    <!-- TODO: also include nodegraph-serialize -->
+    <!-- TODO: nodegraph-serialize -->
+    <!-- TODO: nodegraph-dfucodec -->
 </dependencies>
 ```
 

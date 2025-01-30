@@ -1,8 +1,10 @@
 package io.github.nahkd123.nodegraph.graph;
 
 import java.util.Collection;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 import io.github.nahkd123.nodegraph.node.Node;
 import io.github.nahkd123.nodegraph.socket.InputSocket;
@@ -58,6 +60,11 @@ public class NodeInstance<S, E> {
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public <V> void setInitialValue(InputSocket<V> socket, V initialValue) {
 		((Map) sockets).put(socket, initialValue);
+	}
+
+	@SuppressWarnings({ "unchecked", "rawtypes" })
+	public Collection<Map.Entry<InputSocket<?>, ?>> getAllInitialValues() {
+		return (Set) Collections.unmodifiableSet(sockets.entrySet());
 	}
 
 	@SuppressWarnings({ "unchecked", "rawtypes" })

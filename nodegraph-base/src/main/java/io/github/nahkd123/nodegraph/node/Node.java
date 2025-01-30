@@ -27,15 +27,17 @@ public interface Node<S, E> {
 	 */
 	List<Socket<?>> getSockets();
 
-	default Collection<? extends InputSocket<?>> getInputSockets() {
-		return getSockets().stream()
+	@SuppressWarnings("unchecked")
+	default Collection<InputSocket<?>> getInputSockets() {
+		return (List<InputSocket<?>>) (Object) getSockets().stream()
 			.map(s -> s instanceof InputSocket<?> input ? input : null)
 			.filter(s -> s != null)
 			.toList();
 	}
 
-	default Collection<? extends OutputSocket<?>> getOutputSockets() {
-		return getSockets().stream()
+	@SuppressWarnings("unchecked")
+	default Collection<OutputSocket<?>> getOutputSockets() {
+		return (List<OutputSocket<?>>) (Object) getSockets().stream()
 			.map(s -> s instanceof OutputSocket<?> input ? input : null)
 			.filter(s -> s != null)
 			.toList();

@@ -17,5 +17,6 @@
 	<modules>
 		<module>nodegraph-base</module>
 		<module>nodegraph-serialize</module>
+		<module>nodegraph-dfucodec</module>
 	</modules>
 </project>
